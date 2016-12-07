@@ -1,24 +1,7 @@
-# README
+# SafetyPin
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+Putting a visual spin on the saying "You're not alone".
 
-Things you may want to cover:
+SafetyPin is an app that allows users to share their location as allies so those who are feeling isolated or victimized can see that they are not alone. 
 
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+There are plenty of additional functionalities that this app would like to have (search for nearby events, messaging/community aspect) but the goal for the current two day hackathon is to show visualization of allies. 
