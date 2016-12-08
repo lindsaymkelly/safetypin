@@ -1,0 +1,38 @@
+/*
+*= require_tree .
+*= require_self
+*/
+
+@import "compass";
+
+html, body {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  background-color: black;
+  font-family: 'Oleo Script', cursive;
+  overflow: hidden;
+}
+
+header {
+  background-color: black ;
+  height: 100vh;
+  background-size: cover;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+h1#logo {
+  margin-bottom: 0px;
+  font-size: 4em;
+  font-family: 'Homemade Apple', cursive;;
+  color: white;
+  height: 85px;
+}
+
+p#slogan {
+  color: white;
+}

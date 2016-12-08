@@ -15,6 +15,11 @@ gem 'uglifier', '>= 1.3.0'
 # gem 'coffee-rails', '~> 4.2'
 # See https://github.com/rails/execjs#readme for more supported runtimes
 # gem 'therubyracer', platforms: :ruby
+
+gem 'compass-rails'
+gem 'autoprefixer-rails'
+gem 'binding_of_caller'
+
 gem 'better_errors'
 
 # Use jquery as the JavaScript library
