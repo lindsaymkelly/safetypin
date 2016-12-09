@@ -42,41 +42,9 @@ function initMap(){
     ['User 19', 40.782, -73.980, 19],
     ['User 20', 40.780, -73.970, 20]
   ];
-  var markers = [];
-  function drop() {
-    clearMarkers();
-    for (var i = 0; i < locations.length; i++) {
-      addMarkerWithTimeout(locations[i], i * 200);
-    }
-  }
-
-  function addMarkerWithTimeout(position, timeout) {
-    window.setTimeout(function() {
-      markers.push(new google.maps.Marker({
-        position: position,
-        map: map,
-        animation: google.maps.Animation.DROP
-      }));
-    }, timeout);
-  }
-
-  function clearMarkers() {
-    for (var i = 0; i < markers.length; i++) {
-      markers[i].setMap(null);
-    }
-    markers = [];
-  }
 
   var infowindow = new google.maps.InfoWindow();
 
-//   var image = {
-//   url: '/blue-dot.png',
-//   // This marker is 20 pixels wide by 32 pixels high.
-//   size: new google.maps.Size(20, 20),
-//   // The origin for this image is (0, 0).
-//   origin: new google.maps.Point(0, 0)
-//
-// };
   var marker, i;
 
   for (i = 0; i < locations.length; i++) {
@@ -84,7 +52,7 @@ function initMap(){
       position: new google.maps.LatLng(locations[i][1], locations[i][2]),
       icon: {
         path: google.maps.SymbolPath.CIRCLE,
-        scale: 4,
+        scale: 3,
         strokeColor: '#5DADE2',
         fillColor: '#5DADE2'
 },
@@ -107,9 +75,10 @@ function initMap(){
   // init markers
     var marker = new google.maps.Marker({
     position: new google.maps.LatLng(southWest.lat() + latSpan * Math.random(), southWest.lng() + lngSpan * Math.random()),
+
     icon: {
         path: google.maps.SymbolPath.CIRCLE,
-        scale: 4,
+        scale: 3,
         strokeColor: '#5DADE2',
         fillColor: '#5DADE2'
     },
@@ -142,13 +111,62 @@ function geocodeAddress(geocoder, resultsMap) {
       resultsMap.setCenter(results[0].geometry.location);
       var marker = new google.maps.Marker({
         map: resultsMap,
-        position: results[0].geometry.location
+        position: results[0].geometry.location,
       });
     } else {
       alert('Geocode was not successful for the following reason: ' + status);
     }
   });
 }
+
+
+
+var neighborhoods = [
+        {lat: 40.745, lng: -73.997},
+        {lat: 40.740, lng: -73.996},
+        {lat: 40.742, lng: -73.994},
+        {lat: 40.741, lng: -73.993}
+      ];
+
+      // function initMap(){
+      //   center = {lat: 40.733, lng: -73.988}
+      //   var map = new google.maps.Map(document.getElementById('map'), {
+      //     center: center,
+      //     zoom: 13,
+      //     zoomControl: true,
+      //     zoomControlOptions: {
+      //     position: google.maps.ControlPosition.RIGHT_TOP
+      // },
+      //     styles: custom_styles
+      //   });
+      // }
+      var markers = [];
+      var map;
+
+      function drop() {
+        debugger;
+        clearMarkers();
+        for (var i = 0; i < neighborhoods.length; i++) {
+          addMarkerWithTimeout(neighborhoods[i], i * 200);
+        }
+      }
+
+      function addMarkerWithTimeout(position, timeout) {
+        window.setTimeout(function() {
+          markers.push(new google.maps.Marker({
+            position: position,
+            map: map,
+            animation: google.maps.Animation.DROP
+          }));
+        }, timeout);
+      }
+
+      function clearMarkers() {
+        for (var i = 0; i < markers.length; i++) {
+          markers[i].setMap(null);
+        }
+        markers = [];
+      }
 
 var custom_styles = [
   {
