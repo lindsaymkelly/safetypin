@@ -41,7 +41,8 @@ h1#logo {
   height: 13vh;
   width: 56vh;
   display: inline-block;
-  margin-left: 10px;
+  margin-left: 10%;
+  margin-top: 30%;
 }
 
 div#safetypin-logo {
@@ -63,6 +64,7 @@ h2#slogan {
   margin-top: 2vh;
   font-size: 2em;
   font-family: "Homemade Apple";
+  margin-top: 5%;
 }
 
 button#log-in-button {
@@ -117,7 +119,7 @@ main {
 
 .arrow {
   position: absolute;
-  bottom: 0px;
+  bottom: 5px;
   left: 50%;
   margin-left:-20px;
   width: 40px;
@@ -149,7 +151,6 @@ div#about-container {
 div#safetypin-large {
   background-image: url('/safetypin.png');
   background-size: cover;
-  z-index: 20;
   width: 150px;
   height: 200px;
   display: inline-block;
@@ -161,19 +162,21 @@ html {
   box-sizing: border-box;
 }
 
-/*body {
-  position: relative;
-  margin: 0;
-  padding-bottom: 6rem;
-  min-height: 100%;
-}*/
-
 .page-footer {
   position: absolute;
   right: 0;
   bottom: 0;
   left: 0;
   padding: 1rem;
-  background-color: #efefef;
+  background-color: rgba(239, 239, 239, 0.5);
   text-align: center;
+  height: 8px;
+}
+
+a.register-link {
+  font-family: "Arial", sans-serif;
+}
+
+a.register-link:hover {
+  background-color: clear;
 }

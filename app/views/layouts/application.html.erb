@@ -12,19 +12,19 @@
 
   <body>
   <!-- not permanent nav bar, just allowing easy transitions -->
+  <% if logged_in? %>
   <nav>
     <ul>
-    <% if logged_in? %>
       <li><%=link_to "Logout", session_path(current_user), method: :delete%></li>
-    <% else %>
-      <li><%= link_to("Register", new_user_path)%></li>
-      <li><%= link_to("Login", new_session_path )%></li>
-    <% end %>
     </ul>
   </nav>
+  <% end %>
     <%= yield %>
+
+    <% if logged_in? %>
     <footer class='page-footer'>
       &copy; SafetyPin &#8226; A Phase 4 Hackathon Project By: <a href='https://github.com/marissatraina'>Marissa Traina</a> &#8226; <a href='https://www.github.com/lindsaymkelly'>Lindsay Kelly</a> &#8226; <a href='https://github.com/nanutza'>Nan Min</a>
     </footer>
+    <% end %>
   </body>
 </html>
