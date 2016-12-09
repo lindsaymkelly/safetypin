@@ -9,26 +9,51 @@ function initMap(){
     zoom: 12,
     styles: custom_styles
   });
-  // var marker = new google.maps.Marker({
-  //   position: center,
-  //   map: map
-  // });
 
   var locations = [
-    ['LOCATION 1', 40.735, -73.995, 1],
-    ['LOCATION 2', 40.740, -73.997, 2],
-    ['LOCATION 3', 40.743, -73.996, 3],
-    ['LOCATION 4', 40.745, -73.998, 4],
-    ['Location 5', 40.763, -73.994, 5]
+    ['User 1', 40.735, -73.995, 1],
+    ['User 2', 40.740, -73.997, 2],
+    ['User 3', 40.743, -73.996, 3],
+    ['User 4', 40.745, -73.998, 4],
+    ['User 5', 40.763, -73.984, 5],
+    ['User 6', 40.765, -73.995, 6],
+    ['User 7', 40.750, -73.980, 7],
+    ['User 8', 40.758, -73.986, 8],
+    ['User 9', 40.772, -73.990, 9],
+    ['User 10', 40.780, -73.980, 10],
+    ['User 11', 40.785, -73.965, 11],
+    ['User 12', 40.750, -73.987, 12],
+    ['User 13', 40.753, -73.986, 13],
+    ['User 14', 40.755, -73.988, 14],
+    ['User 15', 40.773, -73.984, 15],
+    ['User 16', 40.775, -73.985, 16],
+    ['User 17', 40.760, -73.970, 17],
+    ['User 18', 40.768, -73.976, 18],
+    ['User 19', 40.782, -73.980, 19],
+    ['User 20', 40.780, -73.970, 20]
   ];
 
-  // var infowindow = new google.maps.InfoWindow();
+  var infowindow = new google.maps.InfoWindow();
 
+//   var image = {
+//   url: '/blue-dot.png',
+//   // This marker is 20 pixels wide by 32 pixels high.
+//   size: new google.maps.Size(20, 20),
+//   // The origin for this image is (0, 0).
+//   origin: new google.maps.Point(0, 0)
+//
+// };
   var marker, i;
 
   for (i = 0; i < locations.length; i++) {
     marker = new google.maps.Marker({
       position: new google.maps.LatLng(locations[i][1], locations[i][2]),
+      icon: {
+        path: google.maps.SymbolPath.CIRCLE,
+        scale: 3,
+        strokeColor: '#5DADE2',
+        fillColor: '#5DADE2'
+},
       map: map
     });
 
@@ -41,8 +66,7 @@ function initMap(){
   }
 
   var geocoder = new google.maps.Geocoder();
-
-document.getElementById('submit').addEventListener('click', function() {
+  document.getElementById('submit').addEventListener('click', function() {
   clearMarkers();
   geocodeAddress(geocoder, map);
 });
