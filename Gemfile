@@ -20,6 +20,8 @@ gem 'compass-rails'
 gem 'autoprefixer-rails'
 gem 'binding_of_caller'
 
+gem 'figaro'
+
 gem 'better_errors'
 
 # Use jquery as the JavaScript library
