@@ -13,3 +13,8 @@
 //= require jquery
 //= require jquery_ujs
 //= require_tree .
+
+$(document).on("click", "div.arrow", function() {
+  var $main = $("main");
+  $("html,body").animate({scrollTop: $main.offset().bottom}, 'slow');
+});
