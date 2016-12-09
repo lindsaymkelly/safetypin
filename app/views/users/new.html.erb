@@ -1,0 +1,24 @@
+
+<div class= "container">
+<h2> Create New Account </h2>
+<%= form_for :user, url: {action: "create"} do |f| %>
+  <%= f.label :name %>
+  <%= f.text_field :name %>
+
+  <%= f.label :email %>
+  <%= f.text_field :email %>
+
+  <%= f.label :city %>
+  <%= f.text_field :city %>
+
+  <%= f.label :password %>
+  <%= f.password_field :password %>
+
+  <%= f.submit "Create Account" %>
+
+<% end %>
+</div>
+<br>
+<div class= "container">
+  <p> Already have an account? <%= link_to "Login here.", new_session_path%></p>
+</div>
