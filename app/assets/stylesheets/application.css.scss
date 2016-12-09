@@ -31,10 +31,28 @@ header {
   align-items: center;
 }
 
+.logo-container {
+  width: 430px;
+}
+
 h1#logo {
   font-size: 400%;
   color: rgba(255, 255, 255, 0.75);
   height: 13vh;
+  width: 56vh;
+  display: inline-block;
+  margin-left: 10px;
+}
+
+div#safetypin-logo {
+  display: inline-block;
+  position: relative;
+  top: 16px;
+  width: 64px;
+  height: 82px;
+  margin-left: 3px;
+  background-image: url('/safetypin.png');
+  background-size: cover;
 }
 
 p#slogan {
@@ -59,7 +77,6 @@ button#log-in-button {
 
 button#log-in-button:hover {
   background-color: rgb(255, 218, 113);
-  transform: scale(1.025);
   cursor: pointer;
   font-weight: bold;
   text-shadow: 0.4px 0.4px grey;
