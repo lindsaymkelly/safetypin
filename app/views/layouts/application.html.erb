@@ -11,6 +11,18 @@
   </head>
 
   <body>
+  <!-- not permanent nav bar, just allowing easy transitions -->
+  <nav>
+    <ul>
+    <% if logged_in? %>
+      <li><%=link_to "Logout", session_path(current_user), method: :delete%></li>
+    <% else %>
+      <li><%= link_to("Register", new_user_path)%></li>
+      <li><%= link_to("Login", new_session_path )%></li>
+    <% end %>
+    </ul>
+
+  </nav>
     <script>
       window.fbAsyncInit = function() {
         FB.init({
