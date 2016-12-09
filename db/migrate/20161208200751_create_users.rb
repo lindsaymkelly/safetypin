@@ -5,7 +5,6 @@ class CreateUsers < ActiveRecord::Migration[5.0]
       t.string :email, null: false, uniqueness: true
       t.string :password_digest
       t.string :city, null: false
-      t.string :current_address
 
       t.timestamps(null: false)
     end
