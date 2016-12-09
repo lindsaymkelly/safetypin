@@ -72,7 +72,7 @@ button#log-in-button {
   height: 30px;
   border-radius: 30px 30px 30px 30px;
   border: none;
-  background-color: rgba(255, 218, 113, 0.77);;
+  background-color: rgba(255, 218, 113, 0.77);
   color: white;
   outline: none;
   margin-top: 15px;
@@ -179,4 +179,52 @@ a.register-link {
 
 a.register-link:hover {
   background-color: clear;
+}
+
+.full-container {
+  height: 100vh;
+  margin: 0;
+  padding: 0;
+  border: 0;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+div.container {
+  font-family: "Arial", sans-serif;
+  color: white;
+  background-color: rgba(91, 116, 255, 0.85);
+  padding-left: 8%;
+  padding-right: 8%;
+  border-radius: 25px 25px 25px 25px;
+}
+
+input {
+  margin-bottom: 8%;
+}
+
+button.submit-button {
+  width: 10vh;
+  height: 30px;
+  border-radius: 30px 30px 30px 30px;
+  border: none;
+  background-color: rgba(255, 218, 113, 0.77);
+  color: white;
+  outline: none;
+  margin-top: 15px;
+}
+
+button.submit-button:hover {
+  background-color: rgb(255, 218, 113);
+  cursor: pointer;
+  font-weight: bold;
+  text-shadow: 0.4px 0.4px grey;
+}
+
+button.submit-button:active {
+  outline: none;
+  border: none;
 }
