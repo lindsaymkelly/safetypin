@@ -6,9 +6,19 @@ function initMap(){
   center = {lat: 40.733, lng: -73.988}
   var map = new google.maps.Map(document.getElementById('map'), {
     center: center,
-    zoom: 12,
+    zoom: 13,
+    zoomControl: true,
+    zoomControlOptions: {
+    position: google.maps.ControlPosition.RIGHT_TOP
+},
     styles: custom_styles
   });
+
+  map.setOptions({ minZoom: 10, streetViewControl: false, mapTypeControl: true});
+  google.maps.event.addDomListener(window, "resize", function() {
+     google.maps.event.trigger(map, "resize");
+     map.setCenter(center);
+ });
 
   var locations = [
     ['User 1', 40.735, -73.995, 1],
@@ -32,6 +42,30 @@ function initMap(){
     ['User 19', 40.782, -73.980, 19],
     ['User 20', 40.780, -73.970, 20]
   ];
+  var markers = [];
+  function drop() {
+    clearMarkers();
+    for (var i = 0; i < locations.length; i++) {
+      addMarkerWithTimeout(locations[i], i * 200);
+    }
+  }
+
+  function addMarkerWithTimeout(position, timeout) {
+    window.setTimeout(function() {
+      markers.push(new google.maps.Marker({
+        position: position,
+        map: map,
+        animation: google.maps.Animation.DROP
+      }));
+    }, timeout);
+  }
+
+  function clearMarkers() {
+    for (var i = 0; i < markers.length; i++) {
+      markers[i].setMap(null);
+    }
+    markers = [];
+  }
 
   var infowindow = new google.maps.InfoWindow();
 
@@ -50,7 +84,7 @@ function initMap(){
       position: new google.maps.LatLng(locations[i][1], locations[i][2]),
       icon: {
         path: google.maps.SymbolPath.CIRCLE,
-        scale: 3,
+        scale: 4,
         strokeColor: '#5DADE2',
         fillColor: '#5DADE2'
 },
@@ -64,37 +98,41 @@ function initMap(){
       }
     })(marker, i));
   }
+  // NYC Lat / Lng
+  var southWest = new google.maps.LatLng(40.680000, -73.900000);
+  var northEast = new google.maps.LatLng(40.800000, -73.996500);
+  var lngSpan = northEast.lng() - southWest.lng();
+  var latSpan = northEast.lat() - southWest.lat();
+  for (var i = 0; i < 500; i++) {
+  // init markers
+    var marker = new google.maps.Marker({
+    position: new google.maps.LatLng(southWest.lat() + latSpan * Math.random(), southWest.lng() + lngSpan * Math.random()),
+    icon: {
+        path: google.maps.SymbolPath.CIRCLE,
+        scale: 4,
+        strokeColor: '#5DADE2',
+        fillColor: '#5DADE2'
+    },
+    map: map,
+    });
+
+      // process multiple info windows
+      (function(marker, i) {
+      // add click event
+      google.maps.event.addListener(marker, 'click', function() {
+      infowindow = new google.maps.InfoWindow({
+        content: 'You are not alone!!'
+      });
+        infowindow.open(map, marker);
+      });
+      })(marker, i);
+  }
 
   var geocoder = new google.maps.Geocoder();
   document.getElementById('submit').addEventListener('click', function() {
   clearMarkers();
   geocodeAddress(geocoder, map);
 });
-}
-
-var markers = [];
-function drop() {
-  clearMarkers();
-  for (var i = 0; i < locations.length; i++) {
-    addMarkerWithTimeout(locations[i], i * 200);
-  }
-}
-
-function addMarkerWithTimeout(position, timeout) {
-  window.setTimeout(function() {
-    markers.push(new google.maps.Marker({
-      position: position,
-      map: map,
-      animation: google.maps.Animation.DROP
-    }));
-  }, timeout);
-}
-
-function clearMarkers() {
-  for (var i = 0; i < markers.length; i++) {
-    markers[i].setMap(null);
-  }
-  markers = [];
 }
 
 function geocodeAddress(geocoder, resultsMap) {
