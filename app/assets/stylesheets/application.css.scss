@@ -7,9 +7,9 @@ html, body {
   margin: 0;
   padding: 0;
   border: 0;
-  background-color: black;
-  font-family: 'Permanent Marker', cursive;
-  overflow: hidden;
+  background-color: #00012a;
+  font-family: 'Homemade Apple', cursive;
+  overflow: scroll;
 }
 
 header {
@@ -31,19 +31,17 @@ header {
 
 h1#logo {
   font-size: 400%;
-  font-family: 'Homemade Apple', cursive;;
   color: rgba(255, 255, 255, 0.75);
   height: 13vh;
 }
 
 p#slogan {
   color: white;
-  font-family: "Permanent Marker", cursive;
   padding-top: 3vh;
   z-index: 3;
   padding: 0;
-  margin-top: 0;
-  font-size: 1.4em;
+  margin-top: 2vh;
+  font-size: 1.6em;
 }
 
 button#log-in-button {
@@ -68,4 +66,18 @@ button#log-in-button:hover {
 button#log-in-button:active {
   outline: none;
   border: none;
+}
+
+main {
+  color: white;
+  height: 100vh;
+
+  background: -webkit-radial-gradient(circle,#ffebb3, #5b74ff); /* Safari 5.1-6.0 */
+  background: -o-radial-gradient(circle, #ffebb3, #5b74ff); /* For Opera 11.6-12.0 */
+  background: -moz-radial-gradient(circle, #ffebb3, #5b74ff); /* For Firefox 3.6-15 */
+  background: radial-gradient(circle, #ffebb3, #5b74ff);
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
