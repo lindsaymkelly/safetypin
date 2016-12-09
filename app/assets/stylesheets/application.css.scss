@@ -3,19 +3,23 @@
 *= require_self
 */
 
-@import "compass";
-
 html, body {
   margin: 0;
   padding: 0;
   border: 0;
   background-color: black;
-  font-family: 'Oleo Script', cursive;
+  font-family: 'Permanent Marker', cursive;
   overflow: hidden;
 }
 
 header {
-  background-color: black ;
+
+  background: #00012a; /* For browsers that do not support gradients */
+  background: -webkit-radial-gradient(circle, #aeb5ff 3%, #3152ff 16%, #000fd9 20%, #00012a 50%); /* Safari 5.1-6.0 */
+  background: -o-radial-gradient(circle, #aeb5ff 3%, #3152ff 16%, #000fd9 20%, #00012a 50%); /* For Opera 11.6-12.0 */
+  background: -moz-radial-gradient(circle, #aeb5ff 3%, #3152ff 16%, #000fd9 20%, #00012a 50%); /* For Firefox 3.6-15 */
+  background: radial-gradient(circle, #aeb5ff 3%, #3152ff 16%, #000fd9 20%, #00012a 50%); /* Standard syntax */
+
   height: 100vh;
   background-size: cover;
 
@@ -26,13 +30,42 @@ header {
 }
 
 h1#logo {
-  margin-bottom: 0px;
-  font-size: 4em;
+  font-size: 400%;
   font-family: 'Homemade Apple', cursive;;
-  color: white;
-  height: 85px;
+  color: rgba(255, 255, 255, 0.75);
+  height: 13vh;
 }
 
 p#slogan {
   color: white;
+  font-family: "Permanent Marker", cursive;
+  padding-top: 3vh;
+  z-index: 3;
+  padding: 0;
+  margin-top: 0;
+  font-size: 1.4em;
+}
+
+button#log-in-button {
+  width: 10vh;
+  height: 30px;
+  border-radius: 30px 30px 30px 30px;
+  border: none;
+  background-color: rgba(255, 218, 113, 0.77);;
+  color: white;
+  outline: none;
+  margin-top: 15px;
+}
+
+button#log-in-button:hover {
+  background-color: rgb(255, 218, 113);
+  transform: scale(1.025);
+  cursor: pointer;
+  font-weight: bold;
+  text-shadow: 0.4px 0.4px grey;
+}
+
+button#log-in-button:active {
+  outline: none;
+  border: none;
 }
