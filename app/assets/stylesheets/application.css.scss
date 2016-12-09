@@ -55,13 +55,14 @@ div#safetypin-logo {
   background-size: cover;
 }
 
-p#slogan {
+h2#slogan {
   color: white;
   padding-top: 3vh;
   z-index: 3;
   padding: 0;
   margin-top: 2vh;
   font-size: 1.6em;
+  font-family: "Homemade Apple";
 }
 
 button#log-in-button {
@@ -124,6 +125,14 @@ main {
   background-size: contain;
 }
 
+.arrow:hover {
+  cursor: all-scroll;
+}
+
 .bounce {
   @include animation(bounce 2s infinite);
+}
+
+p, h2#about {
+  font-family: "Bad Script", cursive;
 }
